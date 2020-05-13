@@ -42,9 +42,13 @@ abstract class Shape implements Comparable {
     public int compareTo(Object o) {
         Shape shape = (Shape) o;
         if (computeArea() == shape.computeArea()) {
-            return (int) (getPerimeter() - shape.getPerimeter());
+            if (getPerimeter() - shape.getPerimeter() > 0)
+                return (int) Math.ceil(getPerimeter() - shape.getPerimeter());
+            return (int) Math.floor(getPerimeter() - shape.getPerimeter());
         }
 
-        return (int) (computeArea() - shape.computeArea());
+        if (computeArea() - shape.computeArea() > 0)
+            return (int) Math.ceil(computeArea() - shape.computeArea());
+        return (int) Math.floor(computeArea() - shape.computeArea());
     }
 }
