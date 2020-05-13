@@ -1,4 +1,6 @@
-abstract class Shape  {
+import java.util.ArrayList;
+
+abstract class Shape implements Comparable {
 
     private Point position;
     private static int numShapes;
@@ -13,7 +15,7 @@ abstract class Shape  {
     public Point getPosition() {
         return position;
     }
-    
+
     public void setPosition(Point position) {
         this.position = position;
     }
@@ -33,7 +35,16 @@ abstract class Shape  {
     abstract public double computeArea();
     abstract public double getPerimeter();
 
-    public String toString(){
+    public String toString() {
         return String.format("Shape type: %s, ID: %d, Area: %f, Perimeter: %f", getClass().getName(),id, computeArea(),getPerimeter());
+    }
+
+    public int compareTo(Object o) {
+        Shape shape = (Shape) o;
+        if (computeArea() == shape.computeArea()) {
+            return (int) (getPerimeter() - shape.getPerimeter());
+        }
+
+        return (int) (computeArea() - shape.computeArea());
     }
 }

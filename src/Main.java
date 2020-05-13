@@ -8,6 +8,7 @@ class Main {
         display(shapes);
         System.out.println(String.format("The total number of shapes created are: %d", Shape.getNumShapes()));
     }
+
     private static void add(ArrayList<Shape> shapes) {
         shapes.add(new Circle(new Point(200.0, 200.0), 50.0));
         shapes.add(new Circle(new Point(300.0, 300.0), 100.0));
