@@ -6,6 +6,8 @@ class Main {
         ArrayList<Shape> shapes = new ArrayList<Shape>();
         add(shapes);
         display(shapes);
+        Collections.sort(shapes);
+        display(shapes);
         System.out.println(String.format("The total number of shapes created are: %d", Shape.getNumShapes()));
     }
 
