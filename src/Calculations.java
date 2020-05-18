@@ -56,6 +56,18 @@ public class Calculations {
                 lines.add(new Line(point1, maxPoint));
             }
         }
+        ArrayList<Line> tempLines = new ArrayList<>();
+        for (Line line1 : lines) {
+            boolean duplicate = false;
+            for (Line line2 : lines) {
+                if ((line1.getPoint1().getX() == line2.getPoint1().getX() && line1.getPoint1().getY() == line2.getPoint1().getY() && line1.getPoint2().getX() == line2.getPoint2().getX() && line1.getPoint2().getY() == line2.getPoint2().getY()) || (line1.getPoint1().getX() == line2.getPoint2().getX() && line1.getPoint1().getY() == line2.getPoint2().getY() && line1.getPoint2().getX() == line2.getPoint1().getX() && line1.getPoint2().getY() == line2.getPoint1().getY()) && tempPoints.contains(line2)) {
+                    duplicate = true;
+                }
+            }
+            if (!duplicate)
+                tempLines.add(line1);
+        }
+        lines = tempLines;
         return lines;
     }
 

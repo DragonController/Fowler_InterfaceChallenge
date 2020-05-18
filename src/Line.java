@@ -7,6 +7,14 @@ public class Line {
         this.point2 = point2;
     }
 
+    public Point getPoint1() {
+        return point1;
+    }
+
+    public Point getPoint2() {
+        return point2;
+    }
+
     public void draw(ShapeCreator shapeCreator) {
         shapeCreator.line((float) point1.getX(), (float) point1.getY(), (float) point2.getX(), (float) point2.getY());
     }
