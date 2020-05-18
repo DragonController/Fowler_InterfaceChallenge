@@ -2,10 +2,18 @@ public class Point {
 
     private double x;
     private double y;
+    private double z;
 
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
+        z = 0;
+    }
+
+    public Point(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
     public double getX() {
@@ -16,11 +24,19 @@ public class Point {
         return y;
     }
 
+    public double getZ() {
+        return z;
+    }
+
     public void setX(double x) {
         this.x = x;
     }
 
     public void setY(double y) {
         this.y = y;
+    }
+
+    public void setZ(double y) {
+        this.z = z;
     }
 }
